@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <title>Quick Fix Hub</title>
+    <link rel="icon" href="img/logo1.jpg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumar+One&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<style>
+    * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+header img {
+    height: 40px;
+    border-radius: 15px;
+}
+
+header h1 {
+    color: white;
+    margin: 0;
+    font-size: 24px;
+    font-family: 'Roboto Serif', serif;
+    width: 10%;
+    margin-right: 60%;
+}
+
+header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li {
+    display: inline;
+    font-family: 'Roboto serif', sans-serif;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: 'Roboto Serif', serif;
+}
+
+header nav ul li a:hover {
+    color: gray;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', serif;
+    background-color: #0B1132;
+    color: white;
+    max-width: 100%;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    margin-top: 40px;
+    margin-left: 4%;
+}
+
+.content {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.title {
+    margin-left: 10%;
+}
+
+.title h1 {
+    font-size: 32px;
+    font-weight: bolder;
+    margin: 0;
+    font-family: 'Roboto', serif;
+}
+
+.p {
+    margin-left: 10%;
+    font-family: 'Roboto', serif;
+    color: white;
+    width: 80%;
+    font-size: 20px;
+    margin-top: 10px;
+    line-height: 1.5;
+}
+
+.image {
+    flex-shrink: 0;
+    margin-right: 10%;
+    margin-top: 20px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.image:hover {
+    transform: scale(1.05);
+    opacity: 0.3;
+}
+
+.image img {
+    width: 500px;
+    height: 400px;
+    border-radius: 15px;
+}
+
+.container2 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 20px;
+    margin-top: 40px;
+}
+
+.image2 {
+    flex-shrink: 0;
+    margin-right: 120px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.image2:hover {
+    transform: scale(1.05);
+    opacity: 0.3;
+}
+
+.image2 img {
+    width: 500px;
+    height: 400px;
+    border-radius: 15px;
+}
+
+.content2 {
+    text-align: left;
+    max-width: 60%;
+}
+
+.title2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: 'Roboto', serif;
+    margin-left: 10%;
+}
+
+.p2 {
+    font-family: 'Roboto', serif;
+    color: white;
+    line-height: 1.5;
+    font-size: 20px;
+    margin-top: 10px;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.p3 {
+    margin-top: 200px;
+    width: 100%;
+    font-size: 18px;
+    text-align: center;
+    margin-left: 45%;
+    line-height: 1.5;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    font-family: 'Roboto', serif;
+    padding: 20px;
+}
+
+.footerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.socialIcons {
+    display: flex;
+    align-items: center;
+    font-size: 50px;
+}
+
+.socialIcons a:hover {
+    transform: scale(1.1);
+}
+
+.socialIcons img.logo {
+    height: 60px;
+    margin-right: 15px;
+    border-radius: 15px;
+}
+
+.socialIcons a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.footerText {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    margin-right: 30%;
+}
+
+.footerItem {
+    margin-left: 20px;
+}
+
+.hamburger {
+    cursor: pointer;
+    display: none;
+    flex-direction: column;
+    margin-left: auto;
+}
+
+.hamburger span {
+    display: block;
+    width: 30px;
+    height: 4px;
+    margin: 4px 0;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.menu {
+    display: none;
+    background-color: black;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.menu.active {
+    display: block;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu li {
+    margin: 10px 0;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-family: 'Roboto serif';
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+
+    header h1 {
+        margin-right: 0;
+        margin-bottom: 10px;
+        width: auto;
+        font-size: 20px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+        padding: 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .menu {
+        width: 100%;
+        display: none;
+        background-color: black;
+        padding: 10px 0;
+    }
+
+    .menu.active {
+        display: block;
+    }
+
+    .menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .menu li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .menu li a {
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+        font-family: 'Roboto serif';
+    }
+
+    .container,
+    .container2 {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .content,
+    .content2 {
+        max-width: 90%;
+        margin-right: 0;
+        text-align: center;
+    }
+
+    .title,
+    .title2 {
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .p,
+    .p2,
+    .p3 {
+        margin-left: 0;
+        width: 90%;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .image,
+    .image2 {
+        margin-right: 0;
+        margin-top: 20px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .image img,
+    .image2 img {
+        width: 100%;
+        height: auto;
+    }
+
+    .container2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image2 {
+        order: 1;
+        margin-bottom: 10px;
+    }
+
+    .p3 {
+        order: 2;
+    }
+
+    .footerContainer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footerText {
+        flex-direction: column;
+        margin-right: 0;
+        text-align: center;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header h1 {
+        margin-right: 20px;
+    }
+
+    header nav ul {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .container,
+    .container2 {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .content,
+    .content2 {
+        text-align: left;
+        max-width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .image,
+    .image2 {
+        margin-top: 10px;
+        width: 80%;
+        text-align: center;
+    }
+
+    .image img,
+    .image2 img {
+        width: 100%;
+        height: auto;
+        margin-left: 10%;
+    }
+
+    .p,
+    .p2,
+    .p3 {
+        width: 100%;
+        font-size: 20px;
+        text-align: left;
+        margin-left: 0;
+    }
+
+    header nav ul {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .menu {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        background-color: black;
+        padding: 10px;
+    }
+
+    .menu.active {
+        display: block;
+    }
+
+    .footerContainer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footerText {
+        flex-direction: column;
+        margin-right: 0;
+        text-align: center;
+    }
+}
+
+
+
+</style>
+
+<header>
+    <img src="img/logo1.jpg" alt="">
+    <h1>Quick Fix Hub</h1>
+    <nav>
+        <ul>
+            <li><a href="index.htm">Home</a></li>
+            <li><a href="services.htm">Services</a></li>
+            <li><a href="about.htm">About</a></li>
+            <li><a href="contact.htm">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="menu" id="menu">
+        <ul>
+            <li><a href="index.htm">Home</a></li>
+            <li><a href="services.htm">Services</a></li>
+            <li><a href="about.htm">About</a></li>
+            <li><a href="contact.htm">Contact</a></li>
+        </ul>
+    </div>
+</header>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="title"><h1>About Us</h1></div>
+            <div class="p">
+                At QuickFix Hub, we are passionate about keeping your devices running smoothly and efficiently. Specializing in cellphone, tablet/iPad, and laptop repairs, we provide expert solutions for a wide range of issues, from broken screens and battery replacements to software troubleshooting and hardware upgrades.
+                <br><br>
+                We believe in providing fast service without cutting corners. Our prices are fair, and we use quality parts to ensure your device works like new. Customer satisfaction is our top priority, and we strive to make every repair a hassle-free experience.
+            </div>
+        </div>
+        <div class="image"><img src="img/logo1.jpg" alt=""></div>
+    </div>
+
+    <div class="container2">
+        <div class="content2">
+            <div class="title2">Why Choose Us?</div>
+            <div class="p2">
+                We can repair any type of broken phone! From smartphones that have been dropped from pockets to ones that have been run over by a car or even ones that have fallen in a pool, we can fix any phone and make it like new.
+                <br><br>
+                Are you unsure what is wrong with your smartphone? Our team has the expertise to diagnose and handle every type of issue on your phone.
+            </div>
+            <div class="p3">
+                At QuickFix Hub, we believe that technology should work for you, not the other way around. Let us take care of your devices so you can focus on what matters most.
+            </div>
+        </div>
+        <div class="image2">
+            <img src="img/about2.jpg" alt="">
+        </div>
+    </div>
+</body>
+
+<footer>
+    <div class="footerContainer">
+        <div class="socialIcons">
+            <img src="img/logo1.jpg" alt="Logo" class="logo">
+            <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <div class="footerText">
+            <div class="footerItem">
+                <strong>Hours:</strong><br> 
+                9:00 am - 5:00 pm<br>
+                Monday - Friday<br>
+                9:00 am - 3:00 pm<br>
+                Saturday
+            </div>
+            <div class="footerItem">
+                <strong>Location:</strong><br> 
+                District 6, Pandacaqui, Mexico
+            </div>
+            <div class="footerItem">
+                <strong>Contact:</strong><br> 
+                Email: sazonoliver17@gmail.com<br>
+                Phone: +63 905 131 2196
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.getElementById('hamburger').addEventListener('click', function() {
+        document.getElementById('menu').classList.toggle('active');
+    });
+</script>
+</html>
